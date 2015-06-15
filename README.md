@@ -29,8 +29,18 @@ Optionals: Log4j
 
 ```
 
-3 
+3 SDLC Designing
 ```
+* Component
+1) Presentation Zone (Web Server Proxy)
+2) Application Zone (Tomcat 7.0.40)
+3) Queueing Zone (MQ server)
+4) Model Zone (Tomcat 8)
+5) Managerment Zone (Tomcat 7.0.22)
 
+* Designing
+SOA-service Oriented Architecture
+jsp ->Spring controller -> JSON service ->Messaging Server->Consumer service listener
+-> Adapter->MongoDB
 
 ```
