@@ -42,5 +42,10 @@ Optionals: Log4j
 SOA-service Oriented Architecture
 jsp ->Spring controller -> JSON service ->Messaging Server->Consumer service listener
 -> Adapter->MongoDB
+```
+
+4 Coding
+```
+
 
 ```
