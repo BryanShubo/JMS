@@ -11,4 +11,30 @@
     <context:component-scan base-package="java"></context:component-scan>
 
     <mvc:annotation-driven/>
+
+    <bean id="connFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="tcp://localhost:61616"/>
+    </bean>
+
+    <bean id="consumerL" class="JMS.listener.ConsumerL"/>
+
+    <bean id="defaultDestination" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="CONSUMER.QUEUE"/>
+    </bean>
+
+    <bean id="JMSMessageListenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connFactory"/>
+        <property name="messageListener" ref="consumerL"/>
+        <property name="destination" ref="defaultDestination"/>
+        <property name="concurrentConsumers" value="4"/>
+    </bean>
+
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsMessagingTemplate">
+        <property name="connectionFactory" ref="connFactory"/>
+        <property name="defaultDestination" ref="rmeDestination"/>
+    </bean>
+
+    <bean id="rmeDestination" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="RME.QUEUE"/>
+    </bean>
 </beans>

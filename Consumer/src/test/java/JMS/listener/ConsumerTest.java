@@ -12,8 +12,8 @@ public class ConsumerTest {
 
     @Test
     public void onMessageTest() {
-        Consumer consumer = new Consumer();
-        consumer.onMessage(message);
+        ConsumerL consumerL = new ConsumerL();
+        consumerL.onMessage(message);
         assertNull(message);
     }
 }
