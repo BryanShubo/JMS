@@ -1,0 +1,6 @@
+jms\core\p2p\async\thread\App.class
+jms\core\p2p\async\thread\ProducerThread.class
+jms\core\p2p\async\thread\ConsumerThread.class
+jms\core\p2p\async\basic\Consumer.class
+jms\core\p2p\async\basic\App.class
+jms\core\p2p\async\basic\Producer.class
